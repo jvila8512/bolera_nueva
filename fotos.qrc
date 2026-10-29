@@ -1,0 +1,18 @@
+<RCC>
+  <qresource prefix="control">
+    <file>HMI/Imagenes/OxtrusoraOK.png</file>
+    <file>Imagenes/emergnecvia 1.jpg</file>
+    <file>Imagenes/Nueva carpeta/apagar.png</file>
+    <file>Imagenes/Nueva carpeta/encender.png</file>
+    <file>Imagenes/Nueva carpeta/onO.png</file>
+    <file>Imagenes/Nueva carpeta/OFF.png</file>
+    <file>Imagenes/Nueva carpeta/rojo.png</file>
+    <file>Imagenes/Nueva carpeta/RESET.png</file>
+    <file>Imagenes/Nueva carpeta/STOP.png</file>
+    <file>Imagenes/Nueva carpeta/sirena.png</file>
+    <file>Imagenes/cog.png</file>
+    <file>Imagenes/histeresis.png</file>
+    <file>Imagenes/Oxtrusora-removebg.png</file>
+    <file>Imagenes/temperatura.png</file>
+  </qresource>
+</RCC>

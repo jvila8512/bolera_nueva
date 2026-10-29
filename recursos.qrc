@@ -1,0 +1,31 @@
+<RCC>
+  <qresource prefix="imagenes">
+    <file>fotos/Animacion_strike.jpeg</file>
+    <file>fotos/Animacion_speare.jpg</file>
+  </qresource>
+  <qresource prefix="iconos">
+    <file>dasboard/icon/open.svg</file>
+    <file>iconos/add.svg</file>
+    <file>iconos/check_circle.min.svg</file>
+    <file>iconos/clear.svg</file>
+    <file>iconos/close.svg</file>
+    <file>iconos/delete.svg</file>
+    <file>iconos/expand_more.svg</file>
+    <file>iconos/export.svg</file>
+    <file>iconos/import.svg</file>
+    <file>iconos/list.svg</file>
+    <file>iconos/pdf.svg</file>
+    <file>iconos/search.svg</file>
+    <file>iconos/select.svg</file>
+    <file>iconos/update.svg</file>
+    <file>iconos/users.svg</file>
+    <file>dasboard/icon/reports.svg</file>
+    <file>dasboard/icon/title_icon.png</file>
+    <file>iconos/logininicio.png</file>
+    <file>dasboard/icon/icono.jpg</file>
+    <file>dasboard/icon/customers.svg</file>
+    <file>dasboard/icon/close.svg</file>
+    <file>dasboard/icon/dashboard.svg</file>
+    <file>dasboard/icon/settings.svg</file>
+  </qresource>
+</RCC>

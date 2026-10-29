@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="pista">
+    <file>iconos/PIsta1.jpg</file>
+  </qresource>
+</RCC>

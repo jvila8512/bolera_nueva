@@ -1,0 +1,670 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1419</width>
+    <height>1029</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <item row="0" column="0">
+    <widget class="QFrame" name="frame">
+     <property name="styleSheet">
+      <string notr="true">alternate-background-color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_12">
+      <item>
+       <widget class="QFrame" name="frame_5">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>60</height>
+         </size>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QLabel" name="label_5">
+           <property name="font">
+            <font>
+             <pointsize>20</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string> Máquina de fabricación de fibra de plástico</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignHCenter|Qt::AlignTop</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="frame_2">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>200</height>
+         </size>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QGroupBox" name="groupBox_6">
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="title">
+            <string>Zona 1      </string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_3">
+            <item alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="label_Resistencias">
+              <property name="font">
+               <font>
+                <pointsize>12</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">border-radius: 30px;
+</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="../fotos.qrc">:/control/Imagenes/Nueva carpeta/OFF.png</pixmap>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="groupBox_8">
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="title">
+            <string>Zona 2</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_2">
+            <item alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="label_Resistencias_2">
+              <property name="font">
+               <font>
+                <pointsize>12</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">border-radius: 30px;
+</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="../fotos.qrc">:/control/Imagenes/Nueva carpeta/OFF.png</pixmap>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="groupBox_10">
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="title">
+            <string>Zona 3 Cabezal</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout">
+            <item alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="label_Resistencias_4">
+              <property name="font">
+               <font>
+                <pointsize>12</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">border-radius: 30px;
+</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="../fotos.qrc">:/control/Imagenes/Nueva carpeta/OFF.png</pixmap>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="groupBox">
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="title">
+            <string>Motor Extrusora</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_4">
+            <item alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="label_Extrusora">
+              <property name="font">
+               <font>
+                <pointsize>12</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true"/>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="../fotos.qrc">:/control/Imagenes/Nueva carpeta/OFF.png</pixmap>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="groupBox_3">
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="title">
+            <string>Motor Compresor</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_5">
+            <item alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="label_Compresor">
+              <property name="font">
+               <font>
+                <pointsize>12</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">border-radius: 30px;
+</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="../fotos.qrc">:/control/Imagenes/Nueva carpeta/OFF.png</pixmap>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="groupBox_4">
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="title">
+            <string>Motor Alimentador</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_6">
+            <item alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="label_Alimentador">
+              <property name="font">
+               <font>
+                <pointsize>12</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">border-radius: 30px;
+
+; </string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="../fotos.qrc">:/control/Imagenes/Nueva carpeta/OFF.png</pixmap>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="frame_8">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>700</height>
+         </size>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_3">
+         <item row="0" column="0">
+          <widget class="QGroupBox" name="groupBox_11">
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="title">
+            <string>Control Temperatura</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_7">
+            <item alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="label_Control">
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="../fotos.qrc">:/control/Imagenes/Nueva carpeta/encender.png</pixmap>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_TextoCOntrol">
+              <property name="font">
+               <font>
+                <pointsize>12</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Plain</enum>
+              </property>
+              <property name="lineWidth">
+               <number>0</number>
+              </property>
+              <property name="text">
+               <string>Automático</string>
+              </property>
+              <property name="textFormat">
+               <enum>Qt::AutoText</enum>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="Cerrar">
+              <property name="font">
+               <font>
+                <pointsize>-1</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true"> QPushButton {
+                background-color: #FF4444;  /* Rojo brillante */
+                border: 2px solid #CC0000;
+                border-radius: 10px;
+                color: white;
+                padding: 12px 24px;
+                font-size: 16px;
+                font-weight: bold;
+                min-width: 120px;
+            }
+            QPushButton:hover {
+                background-color: #FF6666;  /* Rojo más claro al pasar el mouse */
+            }
+            QPushButton:pressed {
+                background-color: #CC0000;  /* Rojo oscuro al presionar */
+                border: 2px solid #990000;
+                padding-left: 26px;  /* Desplazamiento hacia abajo/derecha */
+                padding-top: 14px;
+            }
+            QPushButton:checked {
+                background-color: #CC0000;  /* Rojo oscuro si está activado */
+            }</string>
+              </property>
+              <property name="text">
+               <string>Cerrar</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="0" column="1" rowspan="2">
+          <widget class="QFrame" name="frame_11">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>800</height>
+            </size>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_11">
+            <item alignment="Qt::AlignHCenter">
+             <widget class="QFrame" name="frame_3">
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_2">
+               <item row="0" column="0">
+                <widget class="QLabel" name="label">
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="pixmap">
+                  <pixmap resource="../fotos.qrc">:/control/HMI/Imagenes/OxtrusoraOK.png</pixmap>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+              <widget class="QLabel" name="temp1">
+               <property name="geometry">
+                <rect>
+                 <x>326</x>
+                 <y>240</y>
+                 <width>151</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>22</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">color: rgb(255, 0, 0);</string>
+               </property>
+               <property name="text">
+                <string>280.12°C</string>
+               </property>
+              </widget>
+              <widget class="QLabel" name="temp3">
+               <property name="geometry">
+                <rect>
+                 <x>655</x>
+                 <y>60</y>
+                 <width>131</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>22</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">color: rgb(255, 0, 0);</string>
+               </property>
+               <property name="text">
+                <string>280.21°C</string>
+               </property>
+              </widget>
+              <widget class="QLabel" name="temp2">
+               <property name="geometry">
+                <rect>
+                 <x>532</x>
+                 <y>240</y>
+                 <width>131</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>22</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">color: rgb(255, 0, 0);</string>
+               </property>
+               <property name="text">
+                <string>300.12°C</string>
+               </property>
+              </widget>
+             </widget>
+            </item>
+            <item alignment="Qt::AlignHCenter">
+             <widget class="QFrame" name="frame_4">
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>200</height>
+               </size>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_3">
+               <item>
+                <widget class="QFrame" name="frame_6">
+                 <property name="frameShape">
+                  <enum>QFrame::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_8">
+                  <item>
+                   <widget class="QLabel" name="label_3">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="pixmap">
+                     <pixmap resource="fotos.qrc">:/control/Imagenes/compresor.png</pixmap>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QFrame" name="frame_7">
+                 <property name="frameShape">
+                  <enum>QFrame::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_9">
+                  <item alignment="Qt::AlignHCenter">
+                   <widget class="QLabel" name="label_2">
+                    <property name="maximumSize">
+                     <size>
+                      <width>16777215</width>
+                      <height>40</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <pointsize>14</pointsize>
+                      <bold>true</bold>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color: rgb(255, 0, 0);</string>
+                    </property>
+                    <property name="text">
+                     <string>No hay Aire</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="temp_Aire">
+                    <property name="font">
+                     <font>
+                      <pointsize>22</pointsize>
+                      <bold>true</bold>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color: rgb(255, 0, 0);</string>
+                    </property>
+                    <property name="text">
+                     <string>300.12°C</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="1" column="0" alignment="Qt::AlignTop">
+          <widget class="QFrame" name="frame_10">
+           <property name="maximumSize">
+            <size>
+             <width>250</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_10">
+            <item>
+             <widget class="QPushButton" name="btn_configuracion">
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+                background-color:#00aaff;  /* Rojo brillante */
+
+                border: 2px solid #CC0000;
+                border-radius: 10px;
+                color: white;
+                padding: 12px 24px;
+                font-size: 16px;
+                font-weight: bold;
+                min-width: 120px;
+            }
+            QPushButton:hover {
+                background-color: #FF6666;  /* Rojo más claro al pasar el mouse */
+            }
+            QPushButton:pressed {
+                background-color: #CC0000;  /* Rojo oscuro al presionar */
+                border: 2px solid #990000;
+                padding-left: 26px;  /* Desplazamiento hacia abajo/derecha */
+                padding-top: 14px;
+            }
+            QPushButton:checked {
+                background-color: #CC0000;  /* Rojo oscuro si está activado */
+            }</string>
+              </property>
+              <property name="text">
+               <string>Configuración</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../fotos.qrc"/>
+  <include location="fotos.qrc"/>
+ </resources>
+ <connections/>
+</ui>

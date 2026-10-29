@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="iconos">
+    <file>fotos/descarga.jpg</file>
+  </qresource>
+</RCC>

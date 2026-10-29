@@ -1,0 +1,18 @@
+<RCC>
+  <qresource prefix="imagenes">
+    <file>fotos/Animacion_strike.jpeg</file>
+    <file>fotos/Animacion_speare.jpg</file>
+    
+  </qresource>
+  <qresource prefix="iconos">
+    <file>iconos/logininicio.png</file>
+    <file>dasboard/icon/icono.jpg</file>
+    <file>dasboard/icon/title_icon.png</file>
+    <file>dasboard/icon/customers.svg</file>
+    <file>dasboard/icon/close.svg</file>
+    <file>dasboard/icon/customers.svg</file>
+    <file>dasboard/icon/dashboard.svg</file>
+    <file>dasboard/icon/settings.svg</file>
+      
+  </qresource>
+</RCC>

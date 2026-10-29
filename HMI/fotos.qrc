@@ -1,0 +1,45 @@
+<RCC>
+  <qresource prefix="control">
+    <file>Imagenes/OxtrusoraOK.png</file>
+    <file>Imagenes/compresor.png</file>
+    <file>Imagenes/check_circle.min.svg</file>
+    <file>Imagenes/check_circle.svg</file>
+    <file>Imagenes/clear.svg</file>
+    <file>Imagenes/customers.svg</file>
+    <file>Imagenes/delete.svg</file>
+    <file>Imagenes/expand_more.svg</file>
+    <file>Imagenes/export.svg</file>
+    <file>Imagenes/users.svg</file>
+    <file>Imagenes/close.svg</file>
+    <file>Imagenes/customers - copia.svg</file>
+    <file>Imagenes/customers-white - copia.svg</file>
+    <file>Imagenes/customers-white.svg</file>
+    <file>Imagenes/dashboard - copia.svg</file>
+    <file>Imagenes/dashboard.svg</file>
+    <file>Imagenes/dashboard-white.svg</file>
+    <file>Imagenes/Logo.png</file>
+    <file>Imagenes/orders.svg</file>
+    <file>Imagenes/orders-white.svg</file>
+    <file>Imagenes/products.svg</file>
+    <file>Imagenes/products-white.svg</file>
+    <file>Imagenes/reports.svg</file>
+    <file>Imagenes/reports-white.svg</file>
+    <file>Imagenes/settings.svg</file>
+    <file>Imagenes/settings-white.svg</file>
+    <file>Imagenes/tiempo.png</file>
+    <file>Imagenes/emergnecvia 1.jpg</file>
+    <file>Imagenes/Nueva carpeta/apagar.png</file>
+    <file>Imagenes/Nueva carpeta/encender.png</file>
+    <file>Imagenes/Nueva carpeta/onO.png</file>
+    <file>Imagenes/Nueva carpeta/OFF.png</file>
+    <file>Imagenes/Nueva carpeta/rojo.png</file>
+    <file>Imagenes/Nueva carpeta/RESET.png</file>
+    <file>Imagenes/Nueva carpeta/STOP.png</file>
+    <file>Imagenes/Nueva carpeta/sirena.png</file>
+    <file>Imagenes/cog.png</file>
+    <file>Imagenes/histeresis.png</file>
+    <file>Imagenes/Oxtrusora-removebg.png</file>
+    <file>Imagenes/temperatura.png</file>
+  </qresource>
+  <qresource prefix="prefijoNuevo"/>
+</RCC>

@@ -1,0 +1,31 @@
+import snap7
+import time
+
+IP = '192.168.0.1'  # Revisa esta IP!
+RACK = 0
+SLOT = 4
+
+DB_NUMBER = 1
+START_ADDRESS = 0
+SIZE = 1
+
+plc = snap7.client.Client()
+
+
+plc.connect(IP, RACK, SLOT)
+print("Conexión exitosa!")
+
+    #plc_info = plc.get_cpu_info()
+   # print(f'Module Type: {plc_info}')
+
+state = plc.get_cpu_state()
+print(f'State: {state}')
+
+#db = plc.db_read(DB_NUMBER, START_ADDRESS, SIZE)
+
+
+#product_status = bool(db[0])
+#print(product_status)
+
+
+time.sleep(15)

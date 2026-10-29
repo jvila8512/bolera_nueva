@@ -1,0 +1,37 @@
+<RCC>
+  <qresource prefix="bolo">
+    <file>fotos/bolo1.png</file>
+    <file>fotos/bolo2.png</file>
+    <file>fotos/bolo3.png</file>
+    <file>fotos/bolo4.png</file>
+    <file>fotos/bolo5.png</file>
+    <file>fotos/bolo6.png</file>
+    <file>fotos/bolo7.png</file>
+    <file>fotos/bolo8.png</file>
+    <file>fotos/bolo9.png</file>
+    <file>fotos/bolo10.png</file>
+  </qresource>
+  <qresource prefix="boloTumbado">
+    <file>fotos/bolo1T.png</file>
+    <file>fotos/bolo2T.png</file>
+    <file>fotos/bolo3T.png</file>
+    <file>fotos/bolo4T.png</file>
+    <file>fotos/bolo5T.png</file>
+    <file>fotos/bolo6T.png</file>
+    <file>fotos/bolo7T.png</file>
+    <file>fotos/bolo8T.png</file>
+    <file>fotos/bolo9T.png</file>
+    <file>fotos/bolo10T.png</file>
+  </qresource>
+  <qresource prefix="animaciones">
+    <file>fotos/pistaBolook.jpg</file>
+    <file>fotos/Pista1_TV.jpg</file>
+    <file>fotos/Pista2_TV.jpg</file>
+    <file>iconos/bolos4.jpg</file>
+    <file>fotos/pistaBolo1.jpg</file>
+    <file>fotos/palmares.png</file>
+    <file>fotos/Spare.jpeg</file>
+    <file>fotos/Strike1.jpg</file>
+    <file>fotos/Strike2.jpeg</file>
+  </qresource>
+</RCC>

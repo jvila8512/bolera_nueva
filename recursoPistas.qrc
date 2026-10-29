@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="pistas">
+    <file>fotos/Strikeok.jpg</file>
+    <file>fotos/animaciones/Strike.webp</file>
+    <file>iconos/PIsta1.jpg</file>
+  </qresource>
+</RCC>

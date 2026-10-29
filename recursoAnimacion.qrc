@@ -1,0 +1,17 @@
+<RCC>
+  <qresource prefix="animacion">
+    <file>iconos/update.svg</file>
+    <file>iconos/add.svg</file>
+    <file>iconos/bolera.svg</file>
+    <file>iconos/check_circle.min.svg</file>
+    <file>iconos/check_circle.svg</file>
+    <file>iconos/clear.svg</file>
+    <file>iconos/close.svg</file>
+    <file>iconos/delete.svg</file>
+    <file>iconos/expand_more.svg</file>
+    <file>fotos/animaciones/Pista1.jpg</file>
+    <file>fotos/animaciones/Pista2.jpg</file>
+    <file>fotos/animaciones/Spare_app.jpg</file>
+    <file>fotos/animaciones/strike_app.jpg</file>
+  </qresource>
+</RCC>
