@@ -102,7 +102,7 @@ class DatabaseManager:
             SELECT u.id_usuario, u.usuario, u.contrasena, u.activo,
                    u.id_rol, u.nombre, r.rol
             FROM usuario u
-            JOIN rol r ON u.id_rol = r.id_rol
+            LEFT JOIN rol r ON u.id_rol = r.id_rol
             WHERE u.id_usuario = ?
             """,
             (id_usuario,),
@@ -116,7 +116,7 @@ class DatabaseManager:
             SELECT u.id_usuario, u.usuario, u.contrasena, u.activo,
                    u.id_rol, u.nombre, r.rol
             FROM usuario u
-            JOIN rol r ON u.id_rol = r.id_rol
+            LEFT JOIN rol r ON u.id_rol = r.id_rol
             """
         )
         return cur.fetchall()
@@ -163,14 +163,21 @@ class DatabaseManager:
         """Crea una copia de seguridad con timestamp de bolera.db.
 
         Retorna la ruta al archivo de backup creado.
+        Para BD en memoria (:memory:) usa sqlite3.Connection.backup().
         """
-        if not os.path.exists(self.db_path):
-            raise FileNotFoundError(f"No se encuentra la base de datos: {self.db_path}")
-
         os.makedirs(backup_dir, exist_ok=True)
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         backup_path = os.path.join(backup_dir, f"bolera_backup_{timestamp}.db")
-        shutil.copy2(self.db_path, backup_path)
+
+        if self.db_path == ":memory:":
+            dest = sqlite3.connect(backup_path)
+            self.conexion.backup(dest)
+            dest.close()
+        else:
+            if not os.path.exists(self.db_path):
+                raise FileNotFoundError(f"No se encuentra la base de datos: {self.db_path}")
+            shutil.copy2(self.db_path, backup_path)
+
         return backup_path
 
     def migrar_unificar_tablas(self, backup_dir="backups"):
