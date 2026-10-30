@@ -4,6 +4,8 @@
 
 import sqlite3
 import os
+import shutil
+from datetime import datetime
 
 
 class DatabaseManager:
@@ -154,3 +156,106 @@ class DatabaseManager:
             (nombre_tabla,),
         )
         return cur.fetchone() is not None
+
+    # -------------------- Migracion: unificar duplicados --------------------
+
+    def hacer_backup(self, backup_dir="backups"):
+        """Crea una copia de seguridad con timestamp de bolera.db.
+
+        Retorna la ruta al archivo de backup creado.
+        """
+        if not os.path.exists(self.db_path):
+            raise FileNotFoundError(f"No se encuentra la base de datos: {self.db_path}")
+
+        os.makedirs(backup_dir, exist_ok=True)
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        backup_path = os.path.join(backup_dir, f"bolera_backup_{timestamp}.db")
+        shutil.copy2(self.db_path, backup_path)
+        return backup_path
+
+    def migrar_unificar_tablas(self, backup_dir="backups"):
+        """Migracion: backup -> copy -> validate row-by-row -> drop duplicates.
+
+        Pasos:
+          1. Backup de bolera.db antes de cualquier cambio.
+          2. Copia filas de tablas duplicadas (usuarios, roles) a canonicas
+             (usuario, rol), omitiendo filas que ya existan.
+          3. Valida fila por fila que los datos copiados coincidan con el origen.
+          4. Elimina tablas duplicadas (usuarios, roles).
+
+        Retorna la ruta al backup creado. Reversible restaurando el backup.
+        """
+        # Paso 1: backup
+        backup_path = self.hacer_backup(backup_dir)
+
+        conn = self._connect()
+
+        # Asegurar tablas canonicas
+        self.inicializar()
+
+        # Paso 2 + 3: copiar y validar fila por fila desde duplicados a canonicos
+        if self.tabla_existe("roles"):
+            rows = conn.execute("SELECT id, nombre FROM roles").fetchall()
+            for row_id, nombre in rows:
+                existente = conn.execute("SELECT id_rol FROM rol WHERE rol = ?", (nombre,)).fetchone()
+                if existente is None:
+                    cur = conn.execute("INSERT INTO rol (rol) VALUES (?)", (nombre,))
+                    new_id = cur.lastrowid
+                    # Validacion fila por fila: el rol insertado debe ser recuperable
+                    validado = conn.execute("SELECT rol FROM rol WHERE id_rol = ?", (new_id,)).fetchone()
+                    if validado is None or validado[0] != nombre:
+                        raise RuntimeError(f"Validacion fallida al copiar rol id={row_id}, nombre={nombre}")
+                else:
+                    # Ya existe: validar que el nombre coincida
+                    if existente[0] is not None:
+                        actual = conn.execute("SELECT rol FROM rol WHERE id_rol = ?", (existente[0],)).fetchone()
+                        if actual is None or actual[0] != nombre:
+                            raise RuntimeError(
+                                f"Validacion fallida: rol duplicado '{nombre}' ya existe con nombre diferente"
+                            )
+
+        if self.tabla_existe("usuarios"):
+            rows = conn.execute("SELECT id, nombre, email, rol_id FROM usuarios").fetchall()
+            for row_id, nombre, email, rol_id in rows:
+                existente = conn.execute(
+                    "SELECT id_usuario FROM usuario WHERE usuario = ?", (nombre,)
+                ).fetchone()
+                if existente is None:
+                    # Buscar rol destino (mapear rol_id de roles a id_rol de rol si existe)
+                    id_rol_destino = rol_id
+                    if rol_id is not None:
+                        mapeo = conn.execute("SELECT id_rol FROM rol WHERE id_rol = ?", (rol_id,)).fetchone()
+                        if mapeo is None:
+                            id_rol_destino = None
+                    cur = conn.execute(
+                        """
+                        INSERT INTO usuario (usuario, contrasena, activo, id_rol, nombre)
+                        VALUES (?, ?, ?, ?, ?)
+                        """,
+                        (nombre, "", 1, id_rol_destino, nombre),
+                    )
+                    new_id = cur.lastrowid
+                    # Validacion fila por fila
+                    validado = conn.execute(
+                        "SELECT usuario FROM usuario WHERE id_usuario = ?", (new_id,)
+                    ).fetchone()
+                    if validado is None or validado[0] != nombre:
+                        raise RuntimeError(
+                            f"Validacion fallida al copiar usuario id={row_id}, nombre={nombre}"
+                        )
+
+        # Paso 4: eliminar tablas duplicadas
+        conn.execute("DROP TABLE IF EXISTS usuarios")
+        conn.execute("DROP TABLE IF EXISTS roles")
+        conn.commit()
+
+        return backup_path
+
+    def obtener_estado_tablas(self):
+        """Retorna dict {nombre_tabla: existe} para tablas relevantes."""
+        return {
+            "usuario": self.tabla_existe("usuario"),
+            "rol": self.tabla_existe("rol"),
+            "usuarios": self.tabla_existe("usuarios"),
+            "roles": self.tabla_existe("roles"),
+        }
