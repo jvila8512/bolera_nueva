@@ -68,6 +68,8 @@ imagenes/
 iconos/
 Include/
 share/
+backups/
+media/
 
 # Binarios de media
 *.mp4
@@ -86,20 +88,15 @@ share/
 # ===== Modulos de recursos generados por pyrcc5/pyside6-rcc =====
 # Contienen imagenes embebidas en base64 (pesados). Regenerar con:
 #   pyrcc5 recursos.qrc -o recursos_rc.py   (o pyside6-rcc)
-bolos_rc.py
+# Patrón general para modulos de recursos generados
+*_rc.py
 bolos.py
-recursos_rc.py
 recursos.py
-resources_rc.py
+fotos.py
 rrrr.py
 HMI/fotos.py
-fotos.py
-HMI/fotos_rc.py
-fotos_rc.py
-recursoAnimacion_rc.py
 recursoAnimacion.py
 recuroAnimacion.py
-recursoPistas_rc.py
 recursoPistas.py
 BoleraHolguin/resources_rc.py
 BoleraHolguin/modules/resources_rc.py
