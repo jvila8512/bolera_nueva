@@ -1,4 +1,5 @@
 import sys
+from datetime import datetime
 
 from PyQt6 import uic
 from PyQt6.QtWidgets import QApplication, QMainWindow, QMessageBox, QDialog
@@ -9,6 +10,7 @@ from UI.Login import Login
 from dasboard.DasBoard import MainWindow
 from dasboard.main1 import Principal
 from bd_modelos.usuario import Usuario
+from bd_modelos.Sesion import Sesion
 
 
 class LoginWindow(QDialog):
@@ -36,11 +38,15 @@ class LoginWindow(QDialog):
         if self.con.verificar_usuario_hash(usuario, contrasena):
             fila = self.con.obtener_usuario_por_nombre(usuario)
             if fila:
-                self.abrir_admin_pistas(Usuario(*fila))
+                user = Usuario(*fila)
+                fecha = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                id_sesion = self.con.crear_sesion(user.id_usuario, fecha)
+                sesion = Sesion(id_sesion, user.id_usuario, 1, fecha)
+                self.abrir_admin_pistas(user, sesion)
             self.con.cerrar()
         else:
             QMessageBox.warning(self, "Error", "Usuario o contraseña incorrectos.")
 
-    def abrir_admin_pistas(self, user: Usuario):
-        self.dasboard = MainWindow(user)
+    def abrir_admin_pistas(self, user: Usuario, sesion: Sesion):
+        self.dasboard = MainWindow(user, sesion)
         self.hide()

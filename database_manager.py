@@ -184,6 +184,19 @@ class DatabaseManager:
         )
         return cur.fetchone()
 
+    # -------------------- Sesion --------------------
+
+    def crear_sesion(self, id_usuario, fecha=None):
+        """Inserta una sesion activa y devuelve su id_sesion."""
+        fecha = fecha or datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        conn = self._connect()
+        cur = conn.execute(
+            "INSERT INTO sesion (id_usuario, activa, fecha) VALUES (?, 1, ?)",
+            (id_usuario, fecha),
+        )
+        conn.commit()
+        return cur.lastrowid
+
     def tabla_existe(self, nombre_tabla):
         conn = self._connect()
         cur = conn.execute(
