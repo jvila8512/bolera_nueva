@@ -17,15 +17,12 @@ class LoginApp(QMainWindow):
 
 
 def main(argv=None):
-    """Punto de entrada: crea la QApplication global, aplica tema e inicia el loop."""
-    app = QApplication.instance() or QApplication(argv or [])
-    try:
-        from ui_theme import aplicar_tema
+    """Punto de entrada: crea la QApplication global e inicia el loop.
 
-        aplicar_tema(app)
-    except Exception:
-        # Fallback: si el tema falla, se usa el estilo por defecto de Qt.
-        pass
+    El login conserva su diseno propio (UI/Login.py); NO se aplica QSS a nivel
+    global para no pisar ese diseno. El tema puede aplicarse por ventana.
+    """
+    app = QApplication.instance() or QApplication(argv or [])
     window = LoginApp(app)
     # Mantener referencia viva: si no, el GC destruye el wrapper y Qt cierra la ventana.
     app._login_window = window
