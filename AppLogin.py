@@ -49,4 +49,7 @@ class LoginWindow(QDialog):
 
     def abrir_admin_pistas(self, user: Usuario, sesion: Sesion):
         self.dasboard = MainWindow(user, sesion)
+        # MainWindow llama setWindowFlags() despues de showMaximized(), lo que oculta
+        # la ventana; hay que volver a mostrarla para que aparezca el dashboard.
+        self.dasboard.showMaximized()
         self.hide()
