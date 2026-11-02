@@ -1,3 +1,6 @@
+"""Driver Modbus de bajo nivel (M221). Uso interno: lo envuelve PLCManager (plc_manager.py).
+No se debe usar directamente desde la UI."""
+
 from pymodbus.client import ModbusTcpClient as ModbusClient
 from pymodbus.exceptions import ConnectionException
 
