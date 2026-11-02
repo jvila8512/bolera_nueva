@@ -1,0 +1,36 @@
+/* Tema oscuro - Bolera Holguin */
+QWidget {
+    background-color: #1e1f22;
+    color: #e6e6e6;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 12px;
+}
+QPushButton {
+    background-color: #3d7dd8;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 14px;
+}
+QPushButton:hover { background-color: #5591e8; }
+QPushButton:pressed { background-color: #2c5fa8; }
+QLineEdit, QComboBox, QSpinBox {
+    background-color: #2b2d31;
+    border: 1px solid #3a3d42;
+    border-radius: 4px;
+    padding: 4px;
+    color: #e6e6e6;
+}
+QTableWidget {
+    background-color: #2b2d31;
+    alternate-background-color: #31343a;
+    gridline-color: #3a3d42;
+    color: #e6e6e6;
+}
+QHeaderView::section {
+    background-color: #31343a;
+    padding: 4px;
+    border: 1px solid #3a3d42;
+    color: #e6e6e6;
+}
+QLabel { background: transparent; }

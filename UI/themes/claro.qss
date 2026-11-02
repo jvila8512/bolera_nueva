@@ -1,0 +1,33 @@
+/* Tema claro - Bolera Holguin */
+QWidget {
+    background-color: #f4f6f8;
+    color: #202020;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 12px;
+}
+QPushButton {
+    background-color: #1976d2;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 14px;
+}
+QPushButton:hover { background-color: #1565c0; }
+QPushButton:pressed { background-color: #0d47a1; }
+QLineEdit, QComboBox, QSpinBox {
+    background-color: #ffffff;
+    border: 1px solid #c7cdd3;
+    border-radius: 4px;
+    padding: 4px;
+}
+QTableWidget {
+    background-color: #ffffff;
+    alternate-background-color: #eef2f6;
+    gridline-color: #d3d9df;
+}
+QHeaderView::section {
+    background-color: #e3e9ef;
+    padding: 4px;
+    border: 1px solid #d3d9df;
+}
+QLabel { background: transparent; }
