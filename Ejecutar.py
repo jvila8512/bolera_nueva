@@ -1,4 +1,4 @@
+from appBolera import main
 
-from appBolera import LoginApp
-app= LoginApp()
-
+if __name__ == "__main__":
+    raise SystemExit(main())
