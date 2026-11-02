@@ -26,5 +26,7 @@ def main(argv=None):
     except Exception:
         # Fallback: si el tema falla, se usa el estilo por defecto de Qt.
         pass
-    LoginApp(app)
+    window = LoginApp(app)
+    # Mantener referencia viva: si no, el GC destruye el wrapper y Qt cierra la ventana.
+    app._login_window = window
     return app.exec()
