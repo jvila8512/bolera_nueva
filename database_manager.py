@@ -149,6 +149,41 @@ class DatabaseManager:
         )
         return cur.fetchone() is not None
 
+    def verificar_usuario_hash(self, usuario, contrasena):
+        """Verifica credenciales contra un hash bcrypt (como hace Conexion)."""
+        import bcrypt
+
+        conn = self._connect()
+        cur = conn.execute(
+            "SELECT contrasena FROM usuario WHERE usuario = ? AND activo = 1",
+            (usuario,),
+        )
+        fila = cur.fetchone()
+        if fila is None or fila[0] is None:
+            return False
+        guardado = fila[0]
+        if isinstance(guardado, str):
+            guardado = guardado.encode("utf-8")
+        try:
+            return bcrypt.checkpw(contrasena.encode("utf-8"), guardado)
+        except (ValueError, TypeError):
+            return False
+
+    def obtener_usuario_por_nombre(self, usuario):
+        """Devuelve (id_usuario, usuario, contrasena, activo, id_rol, nombre, rol) o None."""
+        conn = self._connect()
+        cur = conn.execute(
+            """
+            SELECT u.id_usuario, u.usuario, u.contrasena, u.activo,
+                   u.id_rol, u.nombre, r.rol
+            FROM usuario u
+            LEFT JOIN rol r ON u.id_rol = r.id_rol
+            WHERE u.usuario = ? AND u.activo = 1
+            """,
+            (usuario,),
+        )
+        return cur.fetchone()
+
     def tabla_existe(self, nombre_tabla):
         conn = self._connect()
         cur = conn.execute(
