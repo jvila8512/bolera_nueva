@@ -21,6 +21,30 @@ MODBUS_ADDR = 20001
 # --- Tema de UI (requisito CM-5) ---
 # "claro" | "oscuro"
 UI_THEME = "claro"
+THEME_DEFAULT = UI_THEME
+
+# --- Conexion PLC: parametros comunes ---
+PLC_Puerto = 502
+PLC_TIMEOUT = 3          # segundos
+PLC_RETRY_MAX = 3
+PLC_RETRY_DELAY = 2      # segundos
+POLLING_ACTIVO = 500     # ms con juego activo
+POLLING_INACTIVO = 2000  # ms sin juego
+
+# IP unica cuando MODO_DOS_PLC == 1 (un PLC para ambas pistas).
+PLC_IP = PLC_IP_PISTA1
+
+# --- Base de datos ---
+DB_NAME = "bolera.db"
+DB_BACKUP_DIR = "backups"
+DB_BACKUP_DIAS = 7
+DB_BACKUP_SESIONES = 30
+
+# --- Aplicacion / ventana ---
+APP_NAME = "Control Automático de la Bolera"
+APP_VERSION = "1.0.0"
+WINDOW_WIDTH = 1280
+WINDOW_HEIGHT = 720
 
 
 def _validar_modo(valor):

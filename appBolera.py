@@ -1,4 +1,6 @@
 from PyQt6.QtWidgets import QApplication, QMainWindow
+import recursos_rc  # registers :/iconos/ and :/imagenes/ from recursos.qrc
+import bolos_rc     # registers :/bolo/ and :/animaciones/ from bolos.qrc
 
 import AppLogin
 

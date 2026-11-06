@@ -11,10 +11,12 @@ from Crud.sesion.app_Crud_Sesion import SesionCRUD
 import app_CambiarContrasena
 from app_Perfil import PerfilDialog
 from app_dialogoPrecio import CrudPrecio
+from app_dialog_config_plc import ConfigPLCDialog
 from bd_modelos import Sesion
 import recursos
 import recuroAnimacion
 from ConexionBD import M221_Bolera
+from ConexionBD import plc_bridge
 
 
 
@@ -65,12 +67,11 @@ class MainWindow(QMainWindow):
         # Conectar la señal de cierre de la ventana principal
         self.aboutToClose = self.closeEvent
           #Mando a cerrar las pistas cdo levanta el juego
-        ip_address1 = "192.168.0.2"  # Reemplaza con la IP de tu PLC
-                    #ip_address = "localhost"  # Reemplaza con la IP de tu PLC
-        self.m221cliente1 = M221_Bolera.M221(ip_address1)
-        #ip_address = "192.168.0.1"  # Reemplaza con la IP de tu PLC
-        ip_address = "localhost"  # Reemplaza con la IP de tu PLC
-        self.m221cliente = M221_Bolera.M221(ip_address)
+        # Las IPs y clientes PLC se resuelven bajo demanda (no al abrir la app)
+        self.ip_address_pista1 = None
+        self.ip_address_pista2 = None
+        self.m221cliente1 = None
+        self.m221cliente = None
        
     
        # Configurar un QTimer para ejecutar código después de que la ventana esté visible
@@ -146,6 +147,10 @@ class MainWindow(QMainWindow):
                 {
                     "name": "Precio",
                     "icon": ":iconos/dasboard/icon/reports.svg"
+                },
+                {
+                    "name": "Config PLC",
+                    "icon": ":iconos/dasboard/icon/settings.svg"
                 }
               
             
@@ -323,28 +328,11 @@ QListWidget,
             self.dragging = False    
     def codigo_despues_de_visible(self):
         print("La ventana ya está visible. Ejecutando código adicional...")
-       
-       
-        try:       
-                        resul=self.m221cliente.connectar()
-                                                
-                        #DesacActivamos en Juego por la pista 1
-                        if resul :
-                            #Desactivamos en Juego por la pista 1
-                            self.m221cliente.escribir_bit_M(10,1, False)
-                            #DEsactivamosActivamos en motor de las bolas
-                            self.m221cliente.escribir_bit_M(12,1, False) 
 
-                             #Desactivamos en Juego por la pista 2 esta en M210
-                            self.m221cliente.escribir_bit_M(210,1, False) 
-
-                            self.m221cliente.desconectar() 
-                            print("Conexionnnnnnnnnnnnnnnn exitosaaaaaaaaa")
-                        else:
-                          print("Conexionnnnnnnnnnnnnnnn nooooooooooooo exitosaaaaaaaaa")    
-        except Exception as e:
-                    print(f"Programa Aqui algun mensaje de error de Comunicacion {e}") 
-        # Aquí puedes poner el código que deseas ejecutar    
+        # La conexión al PLC se hace a demanda con _ensure_conexion() cuando
+        # realmente se lee/escribe algo. No se conecta aquí para no bloquear
+        # la interfaz si el PLC no está alcanzable.
+        print("PLC listo para conexiones a demanda.")
     def maximize_window(self):
         # Alternar entre maximizar y restaurar
         if self.isMaximized():
@@ -491,11 +479,15 @@ QListWidget,
          
             if icon_path == ":iconos/dasboard/icon/reports.svg":  # Comprueba si el icono coincide
                 self.precio()
+            elif icon_path == ":iconos/dasboard/icon/settings.svg":
+                self.config_plc()
            
     def handle_item_click(self, item):
          
             if item.text() == "Precio":  # Comprueba si el icono coincide
                 self.precio()
+            elif item.text() == "Config PLC":
+                self.config_plc()
               
 
         
@@ -504,6 +496,11 @@ QListWidget,
     
         precio=CrudPrecio()
         precio.exec()
+
+    def config_plc(self):
+        """Abre el dialogo de configuracion de IPs y variables del PLC."""
+        dialogo = ConfigPLCDialog(self)
+        dialogo.exec()
          
                  
     def init_stackwidget(self):

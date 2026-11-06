@@ -5,9 +5,7 @@ from PyQt6.QtCore import Qt
 from UI.precio import Precio
 from ConexionBD.conexion import Conexion
 from PyQt6.QtGui import QIcon,QDoubleValidator # Importa QIcon para usar iconos
-import recursoAnimacion
 
-import recursos
 class CrudPrecio(QDialog):
     def __init__(self):
         super().__init__()

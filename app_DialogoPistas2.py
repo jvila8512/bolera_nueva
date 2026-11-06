@@ -8,21 +8,17 @@ from app_pista2Resultado import Pista2Resultado
 from bd_modelos.usuario import Usuario
 from PyQt6.QtGui import QIcon  # Importa QIcon para usar iconos
 from PyQt6.QtCore import Qt,QDateTime,pyqtSignal
-from dasboard import DasBoard
+from typing import TYPE_CHECKING
 from bd_modelos import Sesion
 
+if TYPE_CHECKING:
+    from dasboard.DasBoard import DasBoard
 
-import recursos
-     
 from UI.pistasDialog2 import Pistas_Dialog
-
- 
-          
-import recursos 
            
 class AdminPistas2(QDialog):
      enviar_datos1 = pyqtSignal(int, str) # Señal para enviar datos
-     def __init__(self, parent,user:Usuario,dasBoard: DasBoard,sesion:Sesion):
+     def __init__(self, parent,user:Usuario,dasBoard, sesion:Sesion):
         super().__init__()
          
          # Initialize the UI from the generated 'main_ui' class
